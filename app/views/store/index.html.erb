@@ -9,7 +9,7 @@
   <p>
     <%= sanitize(product.description) %>
   </p>
-  <div class="price"><%= product.price %></div>
+  <div class="price"><%= number_to_currency(product.price) %></div>
   </li>
 <% end %> 
 </ul>
