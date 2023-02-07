@@ -2,3 +2,4 @@
 //= link_tree ../builds
 //= link products.css
 //= link store.css
+//= link application.css
