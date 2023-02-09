@@ -18,5 +18,6 @@
       </tr>
     </tfoot>
   </table>
+  <%= button_to "Empty cart", @cart, method: :delete, data: { turbo_confirm: "Are you sure you want to empty your cart?" }  %>
 </article>
 
