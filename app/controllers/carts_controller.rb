@@ -62,7 +62,16 @@ class CartsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
   def set_cart
-    @cart = Cart.find(params[:id])
+    cart = Cart.find(params[:id])
+    if cart.id != session[:cart_id]
+      respond_to do |format|
+        format.html { redirect_to store_index_url, notice: 'No access to this cart.' }
+        format.json { head :no_content }
+      end
+      return
+    end
+
+    @cart = cart
   end
 
   # Only allow a list of trusted parameters through.
