@@ -9,6 +9,7 @@
         <td class="quantity"><%= item.quantity %></td>
         <td><%= item.product.title %></td>
         <td class="price"><%= number_to_currency(item.total_price) %></td>
+        <td><%= button_to "Remove product", item, method: :delete, data: { turbo_confirm: "Are you sure you want to remove item?" }  %></td>
       </tr>
     <% end %>
     <tfoot>

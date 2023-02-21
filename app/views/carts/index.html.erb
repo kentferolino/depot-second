@@ -6,6 +6,7 @@
   <% @carts.each do |cart| %>
     <%= render cart %>
     <p>
+      <%= cart.id %>
       <%= link_to "Show this cart", cart %>
     </p>
   <% end %>
